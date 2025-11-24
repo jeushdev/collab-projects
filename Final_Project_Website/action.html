@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Infrastructure Watch | Action Center</title>
+    <link rel="stylesheet" href="styles/action.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="navbar__brand">Infrastructure Watch</div>
+      <nav class="navbar__links">
+        <a href="home.html" aria-current="page">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="data.html">Data & Statistics</a>
+        <a href="action.html">Action Center</a>
+      </nav>
+      <button class="navbar__cta">Login</button>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero__eyebrow">Citizen Feedback</div>
+        <h1>Action Center</h1>
+        <p>
+          Report infrastructure concerns and help us improve our community. Complete the form to
+          share detailed information about the issue you observed.
+        </p>
+      </section>
+
+      <section class="form-section">
+        <div class="form-card">
+          <header>
+            <h2>Submit Your Concern</h2>
+            <p>
+              Share your observations about infrastructure issues in Lipa City. Your feedback helps
+              us monitor and improve public services.
+            </p>
+          </header>
+
+          <form class="form">
+            <div class="grid grid--two">
+              <label class="field">
+                <span>Full Name *</span>
+                <input type="text" placeholder="Juan dela Cruz" required />
+              </label>
+              <label class="field">
+                <span>Phone Number *</span>
+                <input type="tel" placeholder="+63 912 345 6789" required />
+              </label>
+            </div>
+
+            <label class="field">
+              <span>Email Address *</span>
+              <input type="email" placeholder="juan.delacruz@email.com" required />
+            </label>
+
+            <label class="field">
+              <span>Address *</span>
+              <input type="text" placeholder="Street, Barangay, Lipa City" required />
+            </label>
+
+            <label class="field">
+              <span>Category *</span>
+              <select required>
+                <option value="">Select infrastructure category</option>
+                <option value="transportation">Transportation</option>
+                <option value="water">Water</option>
+                <option value="electricity">Electricity</option>
+                <option value="health">Health</option>
+                <option value="education">Education</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span>Describe Your Concern *</span>
+              <textarea rows="6" placeholder="Provide detailed information..." required></textarea>
+            </label>
+
+            <div class="actions">
+              <button type="submit" class="btn-primary">Submit Concern</button>
+              <button type="reset" class="btn-outline">Clear Form</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="timeline">
+          <h3>What happens next?</h3>
+          <ol>
+            <li>
+              <span class="step">1</span>
+              <p>Your concern will be reviewed by our team within 48 hours.</p>
+            </li>
+            <li>
+              <span class="step">2</span>
+              <p>We will verify the information and assess the severity.</p>
+            </li>
+            <li>
+              <span class="step">3</span>
+              <p>The concern will be forwarded to the appropriate government agency.</p>
+            </li>
+            <li>
+              <span class="step">4</span>
+              <p>You will receive updates on the status via email.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© 2025 Infrastructure Watch. Reporting made simple.</p>
+    </footer>
+  </body>
+</html>
+

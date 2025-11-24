@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Infrastructure Watch | Data & Statistics</title>
+    <link rel="stylesheet" href="styles/data.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="navbar__brand">Infrastructure Watch</div>
+      <nav class="navbar__links">
+        <a href="home.html" aria-current="page">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="data.html">Data & Statistics</a>
+        <a href="action.html">Action Center</a>
+      </nav>
+      <button class="navbar__cta">Login</button>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero__content">
+          <p class="hero__eyebrow">Citywide Infrastructure Report</p>
+          <h1>Data &amp; Statistics</h1>
+          <p>
+            Comprehensive data on infrastructure quality and facilities across Lipa City. Use the
+            category tabs below to jump to the section you need.
+          </p>
+        </div>
+      </section>
+
+      <section class="tabs">
+        <div class="tabs__scroll">
+          <a href="#transportation" class="tab">Transportation</a>
+          <a href="#water" class="tab">Water</a>
+          <a href="#electricity" class="tab">Electricity</a>
+          <a href="#health" class="tab">Health</a>
+          <a href="#education" class="tab">Education</a>
+        </div>
+      </section>
+
+      <section class="section" id="transportation">
+        <div class="section__header">
+          <div class="icon-circle">🚗</div>
+          <div>
+            <p class="section__eyebrow">Mobility &amp; Access</p>
+            <h2>Transportation</h2>
+          </div>
+        </div>
+        <div class="cards cards--three">
+          <article class="card">
+            <h3>Road Quality</h3>
+            <p class="card__description">Overall road condition assessment</p>
+            <dl>
+              <div><dt>Excellent</dt><dd>32%</dd></div>
+              <div><dt>Good</dt><dd>45%</dd></div>
+              <div><dt>Fair</dt><dd>18%</dd></div>
+              <div><dt>Poor</dt><dd class="text-danger">5%</dd></div>
+            </dl>
+          </article>
+
+          <article class="card">
+            <h3>Route Availability</h3>
+            <p class="card__description">Public transport routes</p>
+            <dl>
+              <div><dt>Total Routes</dt><dd>24</dd></div>
+              <div><dt>Jeepney Lines</dt><dd>18</dd></div>
+              <div><dt>Bus Routes</dt><dd>6</dd></div>
+              <div><dt>Coverage</dt><dd>89%</dd></div>
+            </dl>
+          </article>
+
+          <article class="card">
+            <h3>Traffic Conditions</h3>
+            <p class="card__description">Peak hour traffic assessment</p>
+            <dl>
+              <div><dt>Avg. Speed (AM)</dt><dd>32 km/h</dd></div>
+              <div><dt>Avg. Speed (PM)</dt><dd>28 km/h</dd></div>
+              <div><dt>Congestion Level</dt><dd class="text-warning">Moderate</dd></div>
+              <div><dt>Traffic Lights</dt><dd>34</dd></div>
+            </dl>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="water">
+        <div class="section__header">
+          <div class="icon-circle">💧</div>
+          <div>
+            <p class="section__eyebrow">Supply &amp; Quality</p>
+            <h2>Water</h2>
+          </div>
+        </div>
+        <div class="cards cards--two">
+          <article class="card">
+            <h3>Water Quality</h3>
+            <p class="card__description">Municipal water quality metrics</p>
+            <dl>
+              <div><dt>pH Level</dt><dd>7.2</dd></div>
+              <div><dt>Turbidity (NTU)</dt><dd>0.8</dd></div>
+              <div><dt>Chlorine (mg/L)</dt><dd>0.5</dd></div>
+              <div><dt>Compliance Rate</dt><dd>98%</dd></div>
+            </dl>
+          </article>
+
+          <article class="card">
+            <h3>Water Facilities</h3>
+            <p class="card__description">Infrastructure &amp; coverage</p>
+            <dl>
+              <div><dt>Treatment Plants</dt><dd>3</dd></div>
+              <div><dt>Pumping Stations</dt><dd>12</dd></div>
+              <div><dt>Coverage Area</dt><dd>94%</dd></div>
+              <div><dt>Daily Capacity</dt><dd>45M liters</dd></div>
+            </dl>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="electricity">
+        <div class="section__header">
+          <div class="icon-circle">⚡</div>
+          <div>
+            <p class="section__eyebrow">Energy Supply</p>
+            <h2>Electricity</h2>
+          </div>
+        </div>
+        <div class="cards cards--two">
+          <article class="card">
+            <h3>Current Power Price</h3>
+            <p class="card__description">Residential electricity rates</p>
+            <dl>
+              <div><dt>Generation</dt><dd>₱5.12/kWh</dd></div>
+              <div><dt>Transmission</dt><dd>₱1.24/kWh</dd></div>
+              <div><dt>Distribution</dt><dd>₱2.86/kWh</dd></div>
+              <div class="card__highlight"><dt>Total Rate</dt><dd>₱9.22/kWh</dd></div>
+            </dl>
+          </article>
+
+          <article class="card">
+            <h3>Electricity Facilities</h3>
+            <p class="card__description">Power infrastructure overview</p>
+            <dl>
+              <div><dt>Substations</dt><dd>8</dd></div>
+              <div><dt>Distribution Lines</dt><dd>1,240 km</dd></div>
+              <div><dt>Reliability Rate</dt><dd>99.2%</dd></div>
+              <div><dt>Avg. Outage / Year</dt><dd>4.3 hrs</dd></div>
+            </dl>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="health">
+        <div class="section__header">
+          <div class="icon-circle">❤️</div>
+          <div>
+            <p class="section__eyebrow">Healthcare Capacity</p>
+            <h2>Health</h2>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Health Facilities</h3>
+          <p class="card__description">Healthcare infrastructure &amp; services</p>
+          <div class="cards cards--three inner-grid">
+            <dl>
+              <div><dt>Hospitals</dt><dd>5</dd></div>
+              <div><dt>Health Centers</dt><dd>18</dd></div>
+              <div><dt>Rural Clinics</dt><dd>32</dd></div>
+            </dl>
+            <dl>
+              <div><dt>Total Beds</dt><dd>840</dd></div>
+              <div><dt>Doctors</dt><dd>156</dd></div>
+              <div><dt>Nurses</dt><dd>423</dd></div>
+            </dl>
+            <dl>
+              <div><dt>Patient Ratio</dt><dd>1:210</dd></div>
+              <div><dt>Emergency Response</dt><dd>8 min avg</dd></div>
+              <div><dt>Ambulances</dt><dd>14</dd></div>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="education">
+        <div class="section__header">
+          <div class="icon-circle">🎓</div>
+          <div>
+            <p class="section__eyebrow">Learning Infrastructure</p>
+            <h2>Education</h2>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Education Facilities</h3>
+          <p class="card__description">Educational infrastructure &amp; enrollment</p>
+          <div class="cards cards--three inner-grid">
+            <dl>
+              <div><dt>Elementary Schools</dt><dd>42</dd></div>
+              <div><dt>High Schools</dt><dd>28</dd></div>
+              <div><dt>Universities</dt><dd>6</dd></div>
+            </dl>
+            <dl>
+              <div><dt>Total Students</dt><dd>68,420</dd></div>
+              <div><dt>Teachers</dt><dd>3,245</dd></div>
+              <div><dt>Student-Teacher Ratio</dt><dd>21:1</dd></div>
+            </dl>
+            <dl>
+              <div><dt>Literacy Rate</dt><dd>97.8%</dd></div>
+              <div><dt>Classrooms</dt><dd>2,840</dd></div>
+              <div><dt>Libraries</dt><dd>76</dd></div>
+            </dl>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© 2025 Infrastructure Watch. Data updated quarterly.</p>
+    </footer>
+  </body>
+</html>
+
