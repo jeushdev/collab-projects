@@ -1,12 +1,14 @@
 :root {
-  --background: #030712;
-  --surface: #0a1124;
-  --card: #131c38;
-  --border: rgba(255, 255, 255, 0.08);
-  --accent: #4f46e5;
-  --accent-soft: rgba(79, 70, 229, 0.15);
-  --text: #f8fafc;
-  --muted: rgba(248, 250, 252, 0.75);
+  --background: #F4F4F4;
+  --surface: #ffffff;
+  --card: #ffffff;
+  --border: rgba(75, 10, 30, 0.2);
+  --accent: #1A3D64;
+  --accent-soft: rgba(13, 20, 153, 0.12); 
+  --text: #08021e;
+  --muted: rgba(10, 23, 75, 0.75);
+  --warning: #1D546C;
+  --danger: #1A3D64;
 }
 
 * {
@@ -16,7 +18,7 @@
 body {
   margin: 0;
   font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
-  background: linear-gradient(160deg, #030712 0%, #0f172a 60%, #1e293b 100%);
+  background: var(--background);
   color: var(--text);
 }
 
@@ -26,12 +28,19 @@ a {
 }
 
 .navbar {
+  position: sticky; 
+  top: 0;
+  z-index: 1000; 
+  background: transparent;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   max-width: 1200px;
   margin: 0 auto;
   padding: 1.5rem 1rem;
   display: flex;
   align-items: center;
   gap: 1rem;
+  border-bottom: 1px solid var(--border);
 }
 
 .navbar__brand {
@@ -63,7 +72,7 @@ a {
   border-radius: 999px;
   border: none;
   background: var(--accent);
-  color: var(--text);
+  color: var(--surface);
   font-weight: 600;
 }
 
@@ -247,4 +256,3 @@ a {
     grid-template-columns: 1fr;
   }
 }
-
