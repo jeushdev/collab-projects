@@ -30,38 +30,34 @@ a {
   color: inherit;
 }
 
-/* --- NAVIGATION (Matches Data Alignment) --- */
+/* NAVIGATION */
 
-/* 1. The Wrapper (Sticky + Blur + Full Width Border) */
 .navbar {
   position: sticky;
   top: 0;
   z-index: 1000;
   width: 100%;
-  background: transparent; /* Or use rgba if you want a tint */
+  background: transparent; 
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
 }
 
-/* 2. The Container (Layout - Identical values to Data CSS) */
 .navbar__container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 1.5rem 1rem; /* Exact padding from Data CSS */
+  padding: 1.5rem 1rem; 
   display: flex;
   align-items: center;
   gap: 1rem;
 }
 
-/* 3. Brand */
 .navbar__brand {
   font-weight: 700;
   font-size: 1.25rem;
-  color: var(--text); /* Explicitly set color */
+  color: var(--text); 
 }
 
-/* 4. Links */
 .navbar__links {
   display: flex;
   gap: 1rem;
@@ -82,25 +78,42 @@ a {
   color: var(--text);
 }
 
-/* 5. Button */
-.navbar__cta {
+
+.navbar__notification {
   margin-left: auto;
-  padding: 0.5rem 1.25rem;
-  border-radius: 999px;
-  border: none;
-  background: var(--accent);
-  color: #fff;
-  font-weight: 600;
+  
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; 
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
   cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-/* --- 3. HERO SECTION --- */
+.navbar__notification:hover {
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.navbar__notification svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* HERO SECTION */
 .hero {
   position: relative;
   width: 100%;
   margin: 0; 
   padding: 5rem 0;
-  /* Background Image */
   background-image: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(26, 61, 100, 0.8)),
     url("/Final_Project_Website/assets/pasig.webp");
   background-size: cover;
@@ -186,29 +199,29 @@ a {
   display: block;         
 }
 
-/* --- 4. PROJECTS SECTION --- */
+/* PROJECTS SECTION */
 .projects {
   background: var(--background);
   padding: 4rem 1rem 5rem;
 }
 
-.projects__header {
+.projects_header {
   max-width: 1200px;
   margin: 0 auto 2.5rem;
 }
 
-.projects__header h2 {
+.projects_header h2 {
   font-size: 2.25rem;
   margin-bottom: 0.5rem;
   color: var(--accent);
 }
 
-.projects__header p {
+.projects_header p {
   color: var(--muted);
   max-width: 640px;
 }
 
-.projects__grid {
+.projects_grid {
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
@@ -229,7 +242,7 @@ a {
   border-color: var(--accent);
 }
 
-.project-card__head {
+.project-card_head {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -238,19 +251,19 @@ a {
   margin-bottom: 0.75rem;
 }
 
-.project-card__head h3 {
+.project-card_head h3 {
   margin: 0;
   color: var(--text);
   font-size: 1.1rem;
 }
 
-.project-card p {
+.project-card_p {
   margin: 0;
   color: var(--muted);
   line-height: 1.5;
 }
 
-/* --- 5. STATUS BADGES --- */
+/* STATUS BADGES */
 .status-badge {
   padding: 0.35rem 0.85rem;
   border-radius: 999px;
@@ -281,7 +294,17 @@ a {
   text-decoration: line-through;
 }
 
-/* --- 6. FOOTER --- */
+.report_button {
+  font-size: 1rem;
+  padding: 1rem 2rem;
+  border-radius: 999px;
+  border: none;
+  background: var(--accent);
+  color: var(--surface);
+  font-weight: 600;
+}
+
+/* FOOTER */
 .footer {
   max-width: 1200px;
   margin: 2rem auto;
@@ -291,7 +314,7 @@ a {
   border-top: 1px solid var(--border);
 }
 
-/* --- 7. MEDIA QUERIES --- */
+/* MEDIA QUERIES */
 @media (max-width: 768px) {
   .navbar__container {
     flex-direction: column;
