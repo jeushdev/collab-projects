@@ -18,7 +18,7 @@
 body {
   margin: 0;
   font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
-  background: var(--background);
+  background: radial-gradient(circle at top, rgba(43, 13, 153, 0.08), transparent 50%), var(--background);
   color: var(--text);
 }
 
@@ -66,14 +66,33 @@ a {
   color: var(--text);
 }
 
-.navbar__cta {
+.navbar__notification {
   margin-left: auto;
-  padding: 0.5rem 1.25rem;
-  border-radius: 999px;
-  border: none;
-  background: var(--accent);
-  color: var(--surface);
-  font-weight: 600;
+  
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; 
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.navbar__notification:hover {
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.navbar__notification svg {
+  width: 20px;
+  height: 20px;
 }
 
 .hero {
