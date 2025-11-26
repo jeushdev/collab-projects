@@ -1,14 +1,14 @@
 :root {
-  --background: #050816;
-  --surface: #0c1428;
-  --card: #141f3c;
-  --border: rgba(255, 255, 255, 0.08);
-  --accent: #4f46e5;
-  --accent-soft: rgba(79, 70, 229, 0.15);
-  --text: #f8fafc;
-  --muted: rgba(248, 250, 252, 0.75);
-  --warning: #fbbf24;
-  --danger: #ef4444;
+  --background: #F4F4F4;
+  --surface: #ffffff;
+  --card: #ffffff;
+  --border: rgba(75, 10, 30, 0.2);
+  --accent: #1A3D64;
+  --accent-soft: rgba(13, 20, 153, 0.12); 
+  --text: #08021e;
+  --muted: rgba(10, 23, 75, 0.75);
+  --warning: #1D546C;
+  --danger: #1A3D64;
 }
 
 * {
@@ -18,7 +18,7 @@
 body {
   margin: 0;
   font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
-  background: radial-gradient(circle at top, rgba(79, 70, 229, 0.18), transparent 45%),
+  background: radial-gradient(circle at top, rgba(43, 13, 153, 0.08), transparent 50%),
     var(--background);
   color: var(--text);
   min-height: 100vh;
@@ -100,7 +100,7 @@ a {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: rgba(5, 8, 22, 0.9);
+  background: transparent;
   border-bottom: 1px solid var(--border);
   backdrop-filter: blur(10px);
 }
@@ -120,13 +120,15 @@ a {
   border-radius: 999px;
   border: 1px solid var(--border);
   text-align: center;
-  font-weight: 500;
+  font-weight: 600;
   white-space: nowrap;
-  background: rgba(255, 255, 255, 0.02);
+  color: var(--background);
+  background: var(--accent);
 }
 
 .tab:hover {
-  border-color: var(--accent);
+  background: transparent;
+  color: var(--text);
 }
 
 .section {
@@ -188,7 +190,7 @@ a {
   border: 1px solid var(--border);
   border-radius: 18px;
   padding: 1.5rem;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 20px 45px rgba(75, 10, 30, 0.15);
 }
 
 .card h3 {
@@ -227,6 +229,57 @@ dd {
   padding-top: 0.75rem;
   margin-top: 0.75rem;
   border-top: 1px solid var(--border);
+}
+
+.two-column {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.text-list {
+  margin: 0;
+  padding-left: 1.25rem;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.text-list li + li {
+  margin-top: 0.35rem;
+}
+
+.table-scroll {
+  overflow-x: auto;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.data-table th,
+.data-table td {
+  text-align: left;
+  padding: 0.85rem 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.data-table th {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  color: var(--background);
+  background: var(--accent);
+}
+
+.data-table tr:hover td {
+  background: var(--accent-soft);
+}
+
+.data-table .table-total td {
+  font-weight: 700;
+  border-bottom: none;
 }
 
 .inner-grid {
