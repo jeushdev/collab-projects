@@ -1,4 +1,6 @@
 /* CORE VARIABLES & RESET */
+@import url("./shared-animations.css");
+
 :root {
   --background: #F4F4F4;
   --surface: #ffffff;
