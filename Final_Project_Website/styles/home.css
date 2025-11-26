@@ -1,15 +1,16 @@
+/* CORE VARIABLES & RESET */
 :root {
-  --background: #0f172a;
-  --surface: #0b1221;
-  --card: #141d35;
-  --border: rgba(255, 255, 255, 0.08);
-  --accent: #4f46e5;
-  --accent-light: #818cf8;
-  --foreground: #f8fafc;
-  --muted: rgba(248, 250, 252, 0.7);
-  --success: #22c55e;
-  --warning: #fbbf24;
-  --danger: #ef4444;
+  --background: #F4F4F4;
+  --surface: #ffffff;
+  --card: #ffffff;
+  --border: rgba(75, 10, 30, 0.2);
+  --accent: #1A3D64;
+  --accent-soft: rgba(13, 20, 153, 0.12); 
+  --text: #08021e;
+  --muted: rgba(10, 23, 75, 0.75);
+  --warning: #1D546C;
+  --danger: #1A3D64;
+  --success: #2e7d32; /* Added for 'Completed' badge */
 }
 
 * {
@@ -19,8 +20,9 @@
 body {
   margin: 0;
   font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
-  background: linear-gradient(180deg, #020617 0%, #0f172a 45%, #1e293b 100%);
-  color: var(--foreground);
+  background: radial-gradient(circle at top, rgba(43, 13, 153, 0.08), transparent 50%),
+    var(--background);
+  color: var(--text);
   min-height: 100vh;
 }
 
@@ -29,63 +31,122 @@ a {
   color: inherit;
 }
 
+
+/* NAVBAR (Sticky & Blurred) */
+/* NAVBAR (Outer Shell - Background & Positioning) */
 .navbar {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1.5rem 1rem;
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  
+  /* Make it full width */
+  width: 100%; 
+  max-width: 100%; /* Removes the 1200px limit on the background */
+  
+  /* Styling */
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
 }
 
+/* NAVBAR (Outer Shell - Handles Position & Background only) */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  
+  /* Full Width Settings */
+  width: 100%;
+  border-bottom: 1px solid var(--border);
+  
+  /* Glass Effect */
+  background: rgba(255, 255, 255, 0.85); 
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* INNER CONTAINER (Handles Alignment - Matches your original code) */
+.navbar__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem; /* Matches your original padding */
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Matches your original gap */
+}
+
+/* TEXT STYLES (Kept exactly as provided) */
 .navbar__brand {
   font-weight: 700;
   font-size: 1.25rem;
+  color: var(--accent); /* Added color to ensure visibility */
 }
 
 .navbar__links {
   display: flex;
   gap: 1rem;
-  flex-grow: 1;
+  flex-wrap: wrap;
 }
 
 .navbar__links a {
-  color: var(--muted);
-  font-weight: 500;
   padding: 0.35rem 0.75rem;
   border-radius: 999px;
+  color: var(--muted);
+  font-weight: 500; /* Added weight for better visibility */
+  font-size: 0.95rem; /* Slight adjust for legibility */
   transition: background 0.2s;
 }
 
 .navbar__links a[aria-current="page"],
 .navbar__links a:hover {
-  background: rgba(129, 140, 248, 0.15);
-  color: var(--foreground);
+  background: var(--accent-soft);
+  color: var(--text); /* Your variable for text color */
 }
 
 .navbar__cta {
-  padding: 0.55rem 1.5rem;
+  margin-left: auto;
+  padding: 0.5rem 1.25rem;
   border-radius: 999px;
   border: none;
   background: var(--accent);
-  color: var(--foreground);
+  color: #ffffff; /* Forced white for contrast on button */
   font-weight: 600;
   cursor: pointer;
 }
 
+/* Mobile Responsive Fix */
+@media (max-width: 640px) {
+  .navbar__container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .navbar__links {
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+  }
+  
+  .navbar__cta {
+    margin-left: 0;
+  }
+}
+/* HERO SECTION (Modified with Background Image) */
 .hero {
   position: relative;
   width: 100%;
-  margin: 2rem 0 0;
-  padding: 4rem 0;
-  border: none;
-  border-radius: 0;
-  background-image: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.55)),
-    url("https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=2000&q=80");
+  margin: 0; /* Removed top margin to sit flush with navbar */
+  padding: 5rem 0;
+  
+  /* Background Image Implementation */
+  background-image: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(26, 61, 100, 0.8)),
+    url("/Final_Project_Website/assets/pasig.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  box-shadow: inset 0 -40px 80px rgba(2, 6, 23, 0.8);
+  
+  color: var(--surface); /* Force text white on dark background */
 }
 
 .hero__grid {
@@ -102,10 +163,11 @@ a {
   font-size: clamp(2.5rem, 6vw, 4rem);
   line-height: 1.1;
   margin: 1rem 0;
+  color: var(--surface); /* Ensure title is white */
 }
 
 .hero__content p {
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.8); /* Lighter white for description */
   font-size: 1.1rem;
   line-height: 1.7;
 }
@@ -114,7 +176,7 @@ a {
   text-transform: uppercase;
   letter-spacing: 0.2em;
   font-size: 0.85rem;
-  color: var(--accent-light);
+  color: #a3bffa; /* Light blue accent for eyebrow */
 }
 
 .hero__stats {
@@ -127,7 +189,7 @@ a {
   width: 48px;
   height: 48px;
   border-radius: 12px;
-  background: rgba(79, 70, 229, 0.15);
+  background: rgba(255, 255, 255, 0.15); /* Glassy background */
   display: grid;
   place-items: center;
   font-size: 1.5rem;
@@ -136,38 +198,44 @@ a {
 
 .stat__label {
   font-weight: 600;
+  color: var(--surface);
 }
 
+/* VISUAL ELEMENT */
 .hero__visual {
   position: relative;
   border-radius: 24px;
-  padding: 2rem;
-  background: radial-gradient(circle at top, rgba(79, 70, 229, 0.35), transparent),
-    var(--card);
-  border: 1px solid var(--border);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  padding: .8rem;
+  background: rgba(255, 255, 255, 0.1); /* Glassy card */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
+
+
+
+/* Add this to styles/home.css */
+
+.visual__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      
+  border-radius: 16px;     
+  display: block;         
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); 
+}
+
 
 .visual__inner {
-  border-radius: 16px;
-  border: 1px solid var(--border);
-  height: 100%;
-  min-height: 280px;
-  display: grid;
-  place-items: center;
-  background: linear-gradient(135deg, rgba(79, 70, 229, 0.2), rgba(14, 165, 233, 0.2));
+  padding: 0;         
+  overflow: hidden;      
+  background: transparent; 
+  min-height: 350px;       
 }
 
-.visual__icon {
-  font-size: 5rem;
-  opacity: 0.5;
-}
-
+/* PROJECTS SECTION */
 .projects {
-  background: var(--surface);
-  border-radius: 32px 32px 0 0;
+  background: var(--background);
   padding: 4rem 1rem 5rem;
-  margin-top: 4rem;
 }
 
 .projects__header {
@@ -178,6 +246,7 @@ a {
 .projects__header h2 {
   font-size: 2.25rem;
   margin-bottom: 0.5rem;
+  color: var(--accent);
 }
 
 .projects__header p {
@@ -189,6 +258,7 @@ a {
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 1.5rem;
 }
 
@@ -202,7 +272,7 @@ a {
 
 .project-card:hover {
   transform: translateY(-4px);
-  border-color: rgba(129, 140, 248, 0.4);
+  border-color: var(--accent);
 }
 
 .project-card__head {
@@ -216,38 +286,45 @@ a {
 
 .project-card__head h3 {
   margin: 0;
+  color: var(--text);
+  font-size: 1.1rem;
 }
 
 .project-card p {
   margin: 0;
   color: var(--muted);
+  line-height: 1.5;
 }
 
+/* STATUS BADGES */
 .status-badge {
   padding: 0.35rem 0.85rem;
   border-radius: 999px;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .status-badge--completed {
-  background: rgba(34, 197, 94, 0.15);
+  background: rgba(46, 125, 50, 0.15);
   color: var(--success);
 }
 
 .status-badge--ongoing {
-  background: rgba(79, 70, 229, 0.15);
-  color: var(--accent-light);
+  background: var(--accent-soft);
+  color: var(--accent);
 }
 
 .status-badge--delayed {
-  background: rgba(251, 191, 36, 0.15);
+  background: rgba(29, 84, 108, 0.15);
   color: var(--warning);
 }
 
 .status-badge--cancelled {
-  background: rgba(239, 68, 68, 0.2);
+  background: rgba(26, 61, 100, 0.1);
   color: var(--danger);
+  text-decoration: line-through;
 }
 
 .footer {
@@ -256,6 +333,7 @@ a {
   padding: 1rem;
   text-align: center;
   color: var(--muted);
+  border-top: 1px solid var(--border);
 }
 
 @media (max-width: 640px) {
@@ -266,6 +344,10 @@ a {
 
   .hero__stats {
     flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .hero {
+    padding: 3rem 0;
   }
 }
-
