@@ -22,6 +22,13 @@ body {
   font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
   background: radial-gradient(circle at top, rgba(43, 13, 153, 0.08), transparent 50%), var(--background);
   color: var(--text);
+  /* Smooth page load */
+  animation: pageFadeIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Smooth main content entrance */
+main {
+  animation: pageSlideIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
 }
 
 a {
@@ -30,24 +37,29 @@ a {
 }
 
 .navbar {
-  position: sticky; 
+  position: sticky;
   top: 0;
-  z-index: 1000; 
-  background: transparent;
+  z-index: 1000;
+  width: 100%;
+  background: #eeecec; 
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.navbar__container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 1.5rem 1rem;
+  padding: 1.5rem 1rem; 
   display: flex;
   align-items: center;
   gap: 1rem;
-  border-bottom: 1px solid var(--border);
 }
 
 .navbar__brand {
   font-weight: 700;
   font-size: 1.25rem;
+  color: var(--text);
 }
 
 .navbar__links {
@@ -60,6 +72,8 @@ a {
   padding: 0.35rem 0.75rem;
   border-radius: 999px;
   color: var(--muted);
+  text-decoration: none;
+  transition: all 0.2s ease;
 }
 
 .navbar__links a[aria-current="page"],
@@ -231,7 +245,7 @@ select {
 }
 
 .btn-outline:hover {
-  border-color: var(--);
+  border-color: var(--accent);
 }
 
 .timeline {
